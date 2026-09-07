@@ -62,6 +62,8 @@ internal enum L10n {
   internal static let administrator = L10n.tr("Localizable", "administrator", fallback: "Administrator")
   /// Advanced
   internal static let advanced = L10n.tr("Localizable", "advanced", fallback: "Advanced")
+  /// AetherEngine
+  internal static let aetherEngine = L10n.tr("Localizable", "aetherEngine", fallback: "AetherEngine")
   /// Age %@
   internal static func agesGroup(_ p1: Any) -> String {
     return L10n.tr("Localizable", "agesGroup", String(describing: p1), fallback: "Age %@")
@@ -1218,6 +1220,8 @@ internal enum L10n {
   internal static let playDefaultTrackDescription = L10n.tr("Localizable", "playDefaultTrackDescription", fallback: "Always plays the first track marked as Default, even if not in your language.")
   /// Played
   internal static let played = L10n.tr("Localizable", "played", fallback: "Played")
+  /// Uses AetherEngine, which demuxes nearly any file type with FFmpeg and decodes through VideoToolbox and AVPlayer, keeping HDR, Dolby Vision, and Dolby Atmos passthrough. Experimental.
+  internal static let playerAetherEngineDescription = L10n.tr("Localizable", "playerAetherEngineDescription", fallback: "Uses AetherEngine, which demuxes nearly any file type with FFmpeg and decodes through VideoToolbox and AVPlayer, keeping HDR, Dolby Vision, and Dolby Atmos passthrough. Experimental.")
   /// Uses Apple's AVPlayer which supports HDR, Picture in Picture, AirPlay casting, and HomePod or AirPlay-enabled speakers. However, it has no subtitle support and is very restrictive with file formats.
   internal static let playerNativeDescription = L10n.tr("Localizable", "playerNativeDescription", fallback: "Uses Apple's AVPlayer which supports HDR, Picture in Picture, AirPlay casting, and HomePod or AirPlay-enabled speakers. However, it has no subtitle support and is very restrictive with file formats.")
   /// Uses VLC's VLCKit to provide compatibility with nearly any file type. However, VLCKit cannot use HomePod or AirPlay-enabled speakers, HDR, Picture in Picture, or AirPlay casting.

@@ -206,8 +206,10 @@ extension VideoPlayerType {
 
     // MARK: - Codec Profiles
 
+    /// - Parameter allowDolbyVisionProfile5: VLC renders profile 5 (no HDR10 base layer)
+    ///   with a colour cast, AetherEngine plays it natively
     @ArrayBuilder<CodecProfile>
-    static var _swiftfinCodecProfiles: [CodecProfile] {
+    static func _swiftfinCodecProfiles(allowDolbyVisionProfile5: Bool) -> [CodecProfile] {
         CodecProfile(
             codec: VideoCodec.h264.rawValue,
             type: .video,
@@ -253,7 +255,7 @@ extension VideoPlayerType {
                     isRequired: true,
                     property: .videoRangeType
                 ) {
-                    swiftfinHDRProfiles
+                    swiftfinHDRProfiles(allowDolbyVisionProfile5: allowDolbyVisionProfile5)
                 }
             }
         )
@@ -279,7 +281,7 @@ extension VideoPlayerType {
                     isRequired: true,
                     property: .videoRangeType
                 ) {
-                    swiftfinHDRProfiles
+                    swiftfinHDRProfiles(allowDolbyVisionProfile5: allowDolbyVisionProfile5)
                 }
             }
         )
@@ -305,17 +307,21 @@ extension VideoPlayerType {
                     isRequired: true,
                     property: .videoRangeType
                 ) {
-                    swiftfinHDRProfiles
+                    swiftfinHDRProfiles(allowDolbyVisionProfile5: allowDolbyVisionProfile5)
                 }
             }
         )
     }
 
     @ArrayBuilder<VideoRangeType>
-    private static var swiftfinHDRProfiles: [VideoRangeType] {
+    private static func swiftfinHDRProfiles(allowDolbyVisionProfile5: Bool) -> [VideoRangeType] {
 
         VideoRangeType.sdr
         VideoRangeType.doviWithSDR
+
+        if allowDolbyVisionProfile5 {
+            VideoRangeType.dovi
+        }
 
         if PlaybackCapabilities.hdrEnabled {
             VideoRangeType.hlg

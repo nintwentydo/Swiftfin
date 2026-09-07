@@ -6,6 +6,8 @@
 // Copyright (c) 2026 Jellyfin & Jellyfin Contributors
 //
 
+import AetherEngine
+import Defaults
 import JellyfinAPI
 
 // TODO: may need some changes for AVPlayer
@@ -40,9 +42,29 @@ struct MediaTrackIndexMap {
     static func build(
         from mediaStreams: [MediaStream],
         for playMethod: PlayMethod,
-        selectedAudioStreamIndex: Int
+        selectedAudioStreamIndex: Int,
+        videoPlayerType: VideoPlayerType = Defaults[.VideoPlayer.videoPlayerType]
     ) -> MediaTrackIndexMap {
         var indexMap = MediaTrackIndexMap()
+
+        if videoPlayerType == .aetherEngine {
+            // AetherEngine addresses embedded tracks by AVStream index. Jellyfin numbers
+            // external subtitles before the container's streams (and external audio after),
+            // so the AVStream index is the Jellyfin index minus the externals ahead of it.
+            // Sidecars get engine-synthesized ids in `LoadOptions.externalSubtitles` order.
+            for track in mediaStreams where track.isExternal != true {
+                guard let index = track.index else { continue }
+                let precedingExternals = mediaStreams.count { $0.isExternal == true && ($0.index ?? .max) < index }
+                indexMap.setPlayerIndex(index - precedingExternals, for: index)
+            }
+
+            for (offset, track) in mediaStreams.sidecarSubtitles.enumerated() {
+                guard let index = track.index else { continue }
+                indexMap.setPlayerIndex(AetherEngine.externalSubtitleTrackIDBase + offset, for: index)
+            }
+
+            return indexMap
+        }
 
         if playMethod == .transcode {
             var containerTracks: [MediaStream] = []

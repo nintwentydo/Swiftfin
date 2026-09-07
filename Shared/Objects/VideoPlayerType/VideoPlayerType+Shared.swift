@@ -19,7 +19,9 @@ extension VideoPlayerType {
         case .native:
             Self._nativeCodecProfiles
         case .swiftfin:
-            Self._swiftfinCodecProfiles
+            Self._swiftfinCodecProfiles(allowDolbyVisionProfile5: false)
+        case .aetherEngine:
+            Self._swiftfinCodecProfiles(allowDolbyVisionProfile5: PlaybackCapabilities.dvEnabled)
         }
     }
 

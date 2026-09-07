@@ -1,6 +1,15 @@
 {
-  "originHash" : "a2ea4831b4277f95b52f845ae611d252f3fc45f831a06467bc6463b283cac2e0",
+  "originHash" : "d93bb4618d6bbfc44d97952eddadee35a0e6fb37fcaf188c3b21643953b9c41b",
   "pins" : [
+    {
+      "identity" : "aetherengine",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/superuser404notfound/AetherEngine",
+      "state" : {
+        "revision" : "8220910be68f2566f129f912f0a1afc568150443",
+        "version" : "6.73.0"
+      }
+    },
     {
       "identity" : "blurhashkit",
       "kind" : "remoteSourceControl",
@@ -83,6 +92,15 @@
       }
     },
     {
+      "identity" : "ffmpegbuild",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/superuser404notfound/FFmpegBuild",
+      "state" : {
+        "revision" : "421e13be7061de67d91b85ac34a6b22a002b164f",
+        "version" : "3.0.0"
+      }
+    },
+    {
       "identity" : "files",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/Files",
@@ -116,6 +134,15 @@
       "state" : {
         "revision" : "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608",
         "version" : "24.0.0"
+      }
+    },
+    {
+      "identity" : "libdovi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/superuser404notfound/LibDovi",
+      "state" : {
+        "revision" : "0d7cce1d6836a30d13a3a2326e50a153af53f014",
+        "version" : "2.1.0"
       }
     },
     {
@@ -179,6 +206,15 @@
       "state" : {
         "revision" : "477e9ef76615f0b76b43bb502af432fe6750b704",
         "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "smbclient",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/SMBClient",
+      "state" : {
+        "revision" : "e636c2b2458930770932a36d311ec9d478575b90",
+        "version" : "0.3.1"
       }
     },
     {

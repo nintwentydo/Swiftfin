@@ -51,6 +51,8 @@
 		E1079FDA2FC6FFCE004B5C54 /* StatefulMacros in Frameworks */ = {isa = PBXBuildFile; productRef = E1079FD92FC6FFCE004B5C54 /* StatefulMacros */; };
 		E1137D2F2E090C1A0091EB60 /* VLCUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1137D2E2E090C1A0091EB60 /* VLCUI */; };
 		E1137D312E090C230091EB60 /* VLCUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1137D302E090C230091EB60 /* VLCUI */; };
+		AE7E0004000000000000AE01 /* AetherEngine in Frameworks */ = {isa = PBXBuildFile; productRef = AE7E0002000000000000AE01 /* AetherEngine */; };
+		AE7E0005000000000000AE01 /* AetherEngine in Frameworks */ = {isa = PBXBuildFile; productRef = AE7E0003000000000000AE01 /* AetherEngine */; };
 		E113A2A72B5A178D009CAAAA /* CollectionHStack in Frameworks */ = {isa = PBXBuildFile; productRef = E113A2A62B5A178D009CAAAA /* CollectionHStack */; };
 		E113A2AA2B5A179A009CAAAA /* CollectionVGrid in Frameworks */ = {isa = PBXBuildFile; productRef = E113A2A92B5A179A009CAAAA /* CollectionVGrid */; };
 		E114DB332B1944FA00B75FB3 /* CollectionVGrid in Frameworks */ = {isa = PBXBuildFile; productRef = E114DB322B1944FA00B75FB3 /* CollectionVGrid */; };
@@ -277,6 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7E0005000000000000AE01 /* AetherEngine in Frameworks */,
 				E1137D312E090C230091EB60 /* VLCUI in Frameworks */,
 				62666E1727E501CC00EC0ECD /* CFNetwork.framework in Frameworks */,
 				62666DFA27E5013700EC0ECD /* TVVLCKit.xcframework in Frameworks */,
@@ -325,6 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7E0004000000000000AE01 /* AetherEngine in Frameworks */,
 				E12B93072947CD0F00CE0BD9 /* Pulse in Frameworks */,
 				E12CDBBF2FFB592A00828742 /* CollectionVGrid in Frameworks */,
 				62666E3E27E503FA00EC0ECD /* MediaAccessibility.framework in Frameworks */,
@@ -530,6 +534,7 @@
 				E1A09F782D05935A00835265 /* CollectionHStack */,
 				BD88CB412D77E6A0006BB5E3 /* TVOSPicker */,
 				E1137D302E090C230091EB60 /* VLCUI */,
+				AE7E0003000000000000AE01 /* AetherEngine */,
 				E1E2D7BE2E3FD936004E2E5F /* Transmission */,
 				E1BD95B32FBE8E50001CDA57 /* JellyfinAPI */,
 				E1079FD92FC6FFCE004B5C54 /* StatefulMacros */,
@@ -598,6 +603,7 @@
 				E1A09F742D05935100835265 /* CollectionHStack */,
 				E17567992E0375F300B90F41 /* VLCUI */,
 				E1137D2E2E090C1A0091EB60 /* VLCUI */,
+				AE7E0002000000000000AE01 /* AetherEngine */,
 				E164308B2E3AA9710028D4E8 /* Transmission */,
 				E13CCE4B2E6C08710070965F /* LNPopupUI-Static */,
 				E11ADE832E7E73B6008074FC /* StatefulMacros */,
@@ -723,6 +729,7 @@
 				E1A09F732D05935100835265 /* XCRemoteSwiftPackageReference "CollectionHStack" */,
 				BD88CB402D77E6A0006BB5E3 /* XCRemoteSwiftPackageReference "TVOSPicker" */,
 				E1137D2D2E090C1A0091EB60 /* XCRemoteSwiftPackageReference "VLCUI" */,
+				AE7E0001000000000000AE01 /* XCRemoteSwiftPackageReference "AetherEngine" */,
 				E164308A2E3AA9710028D4E8 /* XCRemoteSwiftPackageReference "Transmission" */,
 				E13CCE482E6C077D0070965F /* XCRemoteSwiftPackageReference "LNPopupUI" */,
 				E1BD95B02FBE8E44001CDA57 /* XCRemoteSwiftPackageReference "jellyfin-sdk-swift" */,
@@ -1272,6 +1279,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		AE7E0001000000000000AE01 /* XCRemoteSwiftPackageReference "AetherEngine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/superuser404notfound/AetherEngine";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.73.0;
+			};
+		};
 		E1137D2D2E090C1A0091EB60 /* XCRemoteSwiftPackageReference "VLCUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LePips/VLCUI";
@@ -1468,6 +1483,16 @@
 		E1079FD92FC6FFCE004B5C54 /* StatefulMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = StatefulMacros;
+		};
+		AE7E0002000000000000AE01 /* AetherEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE7E0001000000000000AE01 /* XCRemoteSwiftPackageReference "AetherEngine" */;
+			productName = AetherEngine;
+		};
+		AE7E0003000000000000AE01 /* AetherEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE7E0001000000000000AE01 /* XCRemoteSwiftPackageReference "AetherEngine" */;
+			productName = AetherEngine;
 		};
 		E1137D2E2E090C1A0091EB60 /* VLCUI */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -14,6 +14,7 @@ enum VideoPlayerType: String, CaseIterable, Displayable, Storable {
 
     case native
     case swiftfin
+    case aetherEngine
 
     var displayTitle: String {
         switch self {
@@ -21,6 +22,8 @@ enum VideoPlayerType: String, CaseIterable, Displayable, Storable {
             L10n.native
         case .swiftfin:
             L10n.swiftfin
+        case .aetherEngine:
+            L10n.aetherEngine
         }
     }
 
@@ -30,6 +33,8 @@ enum VideoPlayerType: String, CaseIterable, Displayable, Storable {
             Self._nativeDirectPlayProfiles
         case .swiftfin:
             Self._swiftfinDirectPlayProfiles
+        case .aetherEngine:
+            Self._aetherDirectPlayProfiles
         }
     }
 
@@ -39,6 +44,8 @@ enum VideoPlayerType: String, CaseIterable, Displayable, Storable {
             Self._nativeTranscodingProfiles
         case .swiftfin:
             Self._swiftfinTranscodingProfiles
+        case .aetherEngine:
+            Self._aetherTranscodingProfiles
         }
     }
 
@@ -48,6 +55,8 @@ enum VideoPlayerType: String, CaseIterable, Displayable, Storable {
             Self._nativeSubtitleProfiles
         case .swiftfin:
             Self._swiftfinSubtitleProfiles
+        case .aetherEngine:
+            Self._aetherSubtitleProfiles
         }
     }
 }

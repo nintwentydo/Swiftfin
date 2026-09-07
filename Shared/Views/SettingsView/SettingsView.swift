@@ -144,6 +144,10 @@ struct SettingsView: View {
                 L10n.native,
                 value: L10n.playerNativeDescription
             )
+            LabeledContent(
+                L10n.aetherEngine,
+                value: L10n.playerAetherEngineDescription
+            )
         }
     }
 
